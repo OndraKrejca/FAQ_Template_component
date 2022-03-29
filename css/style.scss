@@ -1,0 +1,110 @@
+@import "variables";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    height: 100%;
+    background-color: $color_background;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+
+    .main__container {
+        max-width: 600px;
+        width: 100%;
+        margin: 0 auto;
+
+        .m-container__headline {
+            text-align: center;
+            font-family: $fonts_script;
+            font-size: 2.5rem;
+            color: $color_main;
+            margin-bottom: 4rem;
+        }
+
+        .faq__container {
+            margin-bottom: 1rem;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 2px 3px 6px #d8dde0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+
+            .f-box__show {
+
+                display: grid;
+                grid-template-columns: 1fr 100px;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 100%;
+                padding: 1.7rem 2rem 1rem 2rem;
+                cursor: pointer;
+
+                p {
+                    font-family: $font_faq_headline;
+                    font-size: 1.3rem;
+                    text-transform: capitalize;
+                    color: $color_text;
+                }
+
+                p::first-letter {
+                    text-transform: uppercase;
+                }
+
+                .f-box__icon {
+                    display: flex;
+                    justify-content: center;
+                    color: $color_main;
+                    text-align: right;
+
+
+                    .svg__plus {
+                        width: 1.5rem;
+                        height: 1.5rem;
+                    }
+
+                    .svg__minus {
+                        width: 1.5rem;
+                        height: 1.5rem;
+                        display: none;
+                        color: $color_text;
+                        transform: rotate(90deg);
+                    }
+
+                    .svg__active {
+                        color: $color_text;
+                        transform: rotate(90deg);
+                        transition: transform 0.5s ease;
+                    }
+                }
+            }
+
+            .f-box__text {
+                font-family: $font_faq_headline;
+                line-height: 1.5rem;
+                padding: 0 $padding_num;
+                max-height: 0;
+                overflow: hidden;
+                transition: all 0.5s ease;
+                opacity: 0;
+            }
+
+            .active {
+                opacity: 1;
+                margin-bottom: 1.5rem;
+                transition: all 0.5s ease;
+            }
+
+
+        }
+    }
+}
